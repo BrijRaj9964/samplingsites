@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Example data for 14 sites
 const sites = [
-  { id: 1, name: 'Site 1', lat: 40.73061, lng: -73.935242, details: 'Sampling data for Site 1' },
+  { id: 1, name: 'Site 1', lat: 40.73061, lng: -73.935242, details: 'Sampling data for Site 2222222' },
   { id: 2, name: 'Site 2', lat: 34.052235, lng: -118.243683, details: 'Sampling data for Site 2' },
   { id: 3, name: 'Site 3', lat: 41.878113, lng: -87.629799, details: 'Sampling data for Site 3' },
   // Add remaining sites here...
