@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Map of Sites</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+    }).addTo(map);
+
+    // Example data for 14 sites
+    const sites = [
+      { lat: 28.6139, lng: 77.209, details: 'Site 1: Sampling details here' },
+      { lat: 19.076, lng: 72.8777, details: 'Site 2: Sampling details here' },
+      { lat: 13.0827, lng: 80.2707, details: 'Site 3: Sampling details here' },
+      { lat: 22.5726, lng: 88.3639, details: 'Site 4: Sampling details here' },
+      { lat: 26.9124, lng: 75.7873, details: 'Site 5: Sampling details here' },
+      { lat: 12.9716, lng: 77.5946, details: 'Site 6: Sampling details here' },
+      { lat: 17.385, lng: 78.4867, details: 'Site 7: Sampling details here' },
+      { lat: 23.0225, lng: 72.5714, details: 'Site 8: Sampling details here' },
+      { lat: 25.3176, lng: 82.9739, details: 'Site 9: Sampling details here' },
+      { lat: 21.1458, lng: 79.0882, details: 'Site 10: Sampling details here' },
+      { lat: 27.1767, lng: 78.0081, details: 'Site 11: Sampling details here' },
+      { lat: 15.3173, lng: 75.7139, details: 'Site 12: Sampling details here' },
+      { lat: 11.0168, lng: 76.9558, details: 'Site 13: Sampling details here' },
+      { lat: 9.9312, lng: 76.2673, details: 'Site 14: Sampling details here' },
+    ];
+
+    // Add markers for each site
+    sites.forEach(site => {
+      const marker = L.marker([site.lat, site.lng]).addTo(map);
+      marker.bindPopup(`<b>Location:</b> ${site.lat}, ${site.lng}<br><b>Details:</b> ${site.details}`);
+    });
+  </script>
+</body>
+</html>
